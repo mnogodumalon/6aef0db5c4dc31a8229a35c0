@@ -1,0 +1,24 @@
+{
+  "UmfragenDialog.tsx": {
+    "finaler_termin": "Welcher Termin gewinnt?",
+    "titel": "z. B. Teamessen im Mai",
+    "beschreibung": "Worum geht es bei der Umfrage?",
+    "ort": "z. B. Café Central, Berlin",
+    "zugriffstoken": "z. B. a7f3k9x2",
+    "loeschfrist_tage": "z. B. 90"
+  },
+  "TermineDialog.tsx": {
+    "umfrage": "Welche Umfrage?",
+    "start": "Wann beginnt der Termin?",
+    "ende": "Wann endet der Termin?"
+  },
+  "TeilnehmerDialog.tsx": {
+    "umfrage": "Welche Umfrage?",
+    "name": "z. B. Anna Müller",
+    "bearbeitungstoken": "z. B. a7f3k9x2"
+  },
+  "AntwortenDialog.tsx": {
+    "teilnehmer": "Wer antwortet?",
+    "termin": "Welcher Termin?"
+  }
+}

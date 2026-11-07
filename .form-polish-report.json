@@ -1,0 +1,35 @@
+{
+  "entities": {
+    "Umfragen": {
+      "placeholders_set": 6,
+      "defaults_keys": [
+        "status",
+        "loeschfrist_tage"
+      ],
+      "computed_keys": [],
+      "reason": "Keine Formeln, da es nur Stammdaten der Umfrage ohne numerische Berechnungskette gibt; Status und Löschfrist erhalten Standardwerte."
+    },
+    "Termine": {
+      "placeholders_set": 3,
+      "defaults_keys": [
+        "start"
+      ],
+      "computed_keys": [
+        "_termin_dauer_stunden"
+      ],
+      "reason": "Start und Ende bilden ein Datumspaar, daher wird die Dauer in Stunden als virtueller Wert berechnet; es gibt kein eigenes Dauerfeld und keinen Preis, der per Lookup erreichbar ist."
+    },
+    "Teilnehmer": {
+      "placeholders_set": 3,
+      "defaults_keys": [],
+      "computed_keys": [],
+      "reason": "Teilnehmer is master data without dates or numeric fields of its own, so no formulas or defaults make sense."
+    },
+    "Antworten": {
+      "placeholders_set": 2,
+      "defaults_keys": [],
+      "computed_keys": [],
+      "reason": "Keine Formeln, da die Antworten reine Zuordnungen ohne Zahlen- oder Datumsfelder sind, und kein Standardwert, weil die Antwort bewusst gewählt werden soll."
+    }
+  }
+}

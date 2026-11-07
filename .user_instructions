@@ -1,0 +1,34 @@
+Ziel: Baue eine Anwendung zur Terminabstimmung als Ersatz für Doodle. Sprache der Oberfläche: Deutsch. Zeitzone: Europe/Berlin.
+
+1. Datenmodell
+- Umfrage: Titel (Pflicht), Beschreibung, Ort, Status (offen / geschlossen), finaler Termin (Verweis auf Termin, leer solange offen), öffentliches Zugriffstoken (zufällig, unratbar, mind. 128 Bit), Löschfrist in Tagen nach dem letzten Termin (Standard 90).
+- Termin: gehört zu genau einer Umfrage, Start (Datum + Uhrzeit), Ende (Datum + Uhrzeit). Regel: Ende liegt nach Start. Mehrtägige Termine sind erlaubt.
+- Teilnehmer: gehört zu einer Umfrage, Name (Pflicht, max. 60 Zeichen, innerhalb einer Umfrage eindeutig ohne Beachtung der Groß-/Kleinschreibung), privates Bearbeitungstoken (zufällig, mind. 128 Bit).
+- Antwort: verbindet Teilnehmer und Termin, Wert: Ja / Vielleicht / Nein. Keine Antwort entspricht "nicht beantwortet". Pro Teilnehmer und Termin höchstens eine Antwort.
+
+2. Rollen
+- Administrator: angemeldeter Plattform-Nutzer. Erstellt und verwaltet Umfragen und alle zugehörigen Daten.
+- Teilnehmer: kein Login, kein Konto. Darf nur über das Umfragetoken zugreifen und nur die eigene Zeile über das Bearbeitungstoken ändern.
+
+3. Management-Oberfläche (nur Administrator)
+- Umfrage anlegen, bearbeiten, schließen, löschen. Termine erfassen, bearbeiten, löschen.
+- Pro Umfrage sichtbar: Link zur öffentlichen Seite (mit Kopieren-Funktion) und zugehöriger QR-Code (Download als PNG und SVG).
+- Antworten einsehen, einzelne Teilnehmer löschen, finalen Termin festlegen.
+
+4. Öffentliche Abstimmungsseite (ohne Login)
+- Aufruf über den Link mit dem Umfragetoken. Ungültiges Token liefert eine neutrale Fehlerseite ohne Hinweis auf vorhandene Umfragen.
+- Tabelle: Spalten = Termine (Anfang–Ende, horizontal im Kopf), Zeilen = Teilnehmer.
+- Letzte Zeile zum Ausfüllen: Namensfeld plus je Termin drei Zustände Ja / Vielleicht / Nein, jede Zelle per Klick umschaltbar. Eine Zeile wird mit einer Aktion gespeichert.
+- Unter jeder Spalte: Anzahl "Ja" und getrennt davon Anzahl "Vielleicht". Der Termin mit den meisten "Ja" (bei Gleichstand: meisten "Vielleicht") wird hervorgehoben. Die Summen entstehen deterministisch aus den gespeicherten Antworten, nicht aus Zwischenspeichern, die auseinanderlaufen können.
+- Nach dem Speichern erhält der Teilnehmer einen privaten Bearbeitungslink (Bearbeitungstoken) und kann damit seine Zeile später ändern. Fremde Zeilen sind nicht änderbar.
+- Doppelte Namen werden abgelehnt.
+- Geschlossene Umfragen sind nur lesbar und zeigen den finalen Termin.
+
+5. Nicht-funktional
+- Mobile-first: Tabelle scrollt auf kleinen Displays horizontal, Namensspalte bleibt fixiert.
+- Barrierefreiheit: Zustände nicht nur über Farbe, sondern auch über Symbol/Text. Tastaturbedienbar.
+- Sicherheit: Eingaben validieren und escapen, Rate Limiting und Missbrauchsschutz auf der öffentlichen Seite, soweit die Plattform das bietet.
+- Datenschutz (DSGVO): keine Tracker, keine externen Ressourcen oder Fonts, automatische Löschung der Umfrage samt Teilnehmern und Antworten nach Ablauf der Löschfrist.
+
+6. Ausdrücklich nicht gewünscht
+- E-Mail-Versand, Konten für Teilnehmer, Mehrsprachigkeit.

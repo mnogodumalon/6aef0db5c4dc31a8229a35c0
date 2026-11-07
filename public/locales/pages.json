@@ -1,0 +1,39 @@
+{
+  "pages": {
+    "en": {
+      "Alle Umfragen sind geschlossen — zuletzt {0}.": "All polls are closed — most recently {0}.",
+      "Bester Termin: {0} — {1} Ja, {2} Vielleicht": "Best date: {0} — {1} Yes, {2} Maybe",
+      "Finaler Termin: {0}": "Final date: {0}",
+      "Geschlossen": "Closed",
+      "Geschlossene Umfragen": "Closed polls",
+      "Jetzt schließen": "Close now",
+      "Kein finaler Termin festgelegt": "No final date set",
+      "Keine Umfrage wird in den nächsten {0} Tagen gelöscht.": "No poll will be deleted in the next {0} days.",
+      "Keine kommenden Termine.": "No upcoming dates.",
+      "Keine offenen Umfragen.": "No open polls.",
+      "Lege deine erste Umfrage an und teile den Link.": "Create your first poll and share the link.",
+      "Link kopieren": "Copy link",
+      "Link kopiert": "Link copied",
+      "Löschfrist läuft ab": "Deletion deadline approaching",
+      "Löschung am {0}": "Deletion on {0}",
+      "Löschung bald": "Deletion soon",
+      "Löschung fällig": "Deletion due",
+      "Neue Umfrage": "New poll",
+      "Noch keine Antworten": "No responses yet",
+      "Noch keine geschlossenen Umfragen.": "No closed polls yet.",
+      "Nächste Termine": "Upcoming dates",
+      "Offen": "Open",
+      "Offen: {0}.": "Open: {0}.",
+      "Offene Umfragen": "Open polls",
+      "QR als PNG": "QR as PNG",
+      "QR als SVG": "QR as SVG",
+      "QR-Code zur Umfrage": "Poll QR code",
+      "Schließen": "Close",
+      "Termin anlegen": "Create date",
+      "Umfrage schließen": "Close poll",
+      "in {0} Tagen": "in {0} days",
+      "ist noch offen, obwohl alle Termine vorbei sind.": "is still open even though all dates have passed."
+    }
+  },
+  "v": 1
+}
